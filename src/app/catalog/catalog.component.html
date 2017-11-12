@@ -1,0 +1,27 @@
+<div *ngIf="courseList.length > 0; then courses else noCourses"></div>
+
+<ng-template #courses>
+    <div class="flex_wrapper">
+        <div class="list_item" *ngFor="let course of  courseList">
+            <div class="head_img">
+                <img src="/assets/img/{{course.caption}}.jpg" alt="">
+            </div>
+            <div class="description">
+                <div class="caption">
+                    {{course.caption}}
+                </div>
+                <div class="price">
+                    {{course.price}}
+                </div>
+                <div class="duration">
+                    {{course.duration}}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</ng-template>
+<ng-template #noCurses>
+    <h1>No courses yet!</h1>
+</ng-template>
+
